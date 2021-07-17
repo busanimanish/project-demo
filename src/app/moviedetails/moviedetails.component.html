@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 mt-5">
+        </div>
+        <div class="col-lg-5 mt-5">
+            <h3>{{movie.title}}</h3>
+            <p>Year of release: {{movie.year}}</p>
+            <p>Genres: {{movie.genres}}</p>
+            <p>Running time: {{movie.time}}</p>
+            <span>Directors: </span>
+            <span *ngFor="let director of movie.directors; let idx=index">
+                <span *ngIf="idx!=movie.directors.length-1">{{director}}, </span>
+                <span *ngIf="idx==movie.directors.length-1">{{director}} </span>
+            </span>
+            <br>
+            <br>
+            <span>Cast: </span>
+            <span *ngFor="let star of movie.stars; let idx=index">
+                <span *ngIf="idx!=movie.stars.length-1">{{star}}, </span>
+                <span *ngIf="idx==movie.stars.length-1">{{star}} </span>
+            </span>
+            <br>
+            <br>
+            <span *ngIf="movie.available[0]!=''">
+                <span>Available in: </span>
+                <span *ngFor="let ott of movie.available; let idx=index">
+                    <span *ngIf="idx!=movie.available.length-1">{{ott}}, </span>
+                    <span *ngIf="idx==movie.available.length-1">{{ott}} </span>
+                </span>
+            </span>
+        </div>
+    </div>
+</div>

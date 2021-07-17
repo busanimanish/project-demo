@@ -1,0 +1,23 @@
+.form-control{
+    box-shadow: none;
+    border: 1px #5f9422 solid 
+}
+h2{
+    color: #DB2C2C;
+    font-weight: bold;
+}
+form{
+    color:#5f9422;
+    font-weight: bold;
+}
+.btn{
+    background-color: #5f9422;
+    color: white;
+    box-shadow: none;
+}
+a{
+    color: #DB2C2C;
+}
+small{
+    color: black;
+}

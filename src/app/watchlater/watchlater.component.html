@@ -1,0 +1,24 @@
+<table class="table mx-auto" *ngIf="watchlaterStatus">
+    <tbody>
+      <tr *ngFor="let movie of watchlater;let i=index">
+        <td><img src="{{movie.poster}}"></td>
+        <td>{{movie.title}}</td>
+        <td>{{movie.year}}</td>
+        <td>{{movie.time}}</td>
+        <td>
+          <span class="dropdown">
+            <button class="btn btn-sm" type="button" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            ...
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdown">
+              <li><a class="dropdown-item" (click)="removeMovie(i)">Remove from watchlater</a></li>
+              <li><a class="dropdown-item" (click)="getMovieDetails(movie)">View details</a></li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+</table>
+<div *ngIf="!watchlaterStatus">
+    No movies found
+</div>

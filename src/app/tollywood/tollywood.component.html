@@ -1,0 +1,22 @@
+<div *ngIf="!nomovies" class="row row-cols-md-2 row-cols-lg-3 row-cols-1 row-cols-sm-1 mx-auto">
+    <div class="col" *ngFor="let movie of tollywoodMovies">
+            <div class="card shadow m-4 image-wrapper" style="max-width: 19rem;">
+                <div class="card-header" style="color: #5f9422; font-weight: bold;">
+                    {{movie.title}}
+                    <span class="dropdown">
+                        <button class="btn btn-sm dropdown-toggle" type="button" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown">
+                          <li *ngIf="userType!='admin'"><a class="dropdown-item" (click)="watchlater(movie)" style="color: #DB2C2C;">Watchlater</a></li>
+                          <li *ngIf="userType=='admin'"><a class="dropdown-item" (click)="edit(movie.title)">Edit details</a></li>
+                          <li *ngIf="userType=='admin'"><a class="dropdown-item" (click)="delete(movie)" >Delete</a></li>
+                          <li><a class="dropdown-item" (click)="getMovieDetails(movie)" style="color: #DB2C2C;">View details</a></li>
+                        </ul>
+                    </span>
+                </div>
+                    <a (click)='getMovieDetails(movie)'>
+                        <img class="card-img-top" src="{{movie.poster}}" alt="Card image cap">
+                    </a>
+                </div>
+    </div>
+</div>

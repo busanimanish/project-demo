@@ -1,0 +1,57 @@
+<h2 class="text-center m-4">Add movie</h2>
+<div class="row">
+    <div class="col-md-3 col-sm-2"></div>
+    <div class="col-md-6 col-sm-8">
+        <form #ref="ngForm" (ngSubmit)="addMovie(ref.value)">
+            <div class="mb-3">
+                <input type="radio" id="Telugu" name="language" value="tollywood" ngModel>
+                <label class="pe-5" for="Telugu">Tollywood</label>
+                <input type="radio" id="Hindi" name="language" value="bollywood" ngModel>
+                <label for="Hindi" class="pe-5">Bollywood</label>
+                <input type="radio" id="English" name="language" value="hollywood" ngModel>
+                <label for="English">Hollywood</label>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" name="title" class="form-control" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="yr" class="form-label">Year</label>
+                <input type="text" id="yr" name="year" class="form-control" ngModel>
+            </div>
+            <div class="mb-3">
+                <label>Poster</label>
+                <input type="file" name="poster" class="form-control" ngModel (change)="selectFile($event)">
+            </div>
+            <div class="mb-3">
+                <label for="trailer" class="form-label">Trailer URL</label>
+                <input type="text" id="trailer" name="trailer" class="form-control" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Run time</label>
+                <input type="text" id="time" name="time" class="form-control" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="genres" class="form-label">Genres</label>
+                <input type="text" id="genres" name="genres" class="form-control" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="directors" class="form-label">Directors</label>
+                <input type="text" id="directors" name="directors" class="form-control" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="stars" class="form-label">Stars</label>
+                <input type="text" id="stars" name="stars" class="form-control" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="available" class="form-label">Available in</label>
+                <input type="text" id="available" name="available" class="form-control" ngModel>
+            </div>
+            <small>If there are multiple directors or stars, give the names seperated by hyphen(-)</small>
+            <br>
+            <small>Ex: name_1 - name_2 - name_3</small>
+            <button class="btn mx-auto d-block mb-4">Add movie</button>
+        </form>
+    </div>
+    <div class="col-md-3 col-sm-2"></div>
+</div>
