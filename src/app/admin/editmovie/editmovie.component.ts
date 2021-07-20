@@ -10,7 +10,7 @@ import { MovieService } from 'src/app/movie.service';
 export class EditmovieComponent implements OnInit {
 
   movieObj;
-  language; moviename; yr; trailer; runTym; genres; directors; stars; available
+  genres; directors; stars; available
   constructor(private ar:ActivatedRoute,private ms:MovieService) { }
 
   ngOnInit(): void {
@@ -19,11 +19,11 @@ export class EditmovieComponent implements OnInit {
     this.ms.getMovie(movieName,language).subscribe(
       res=>{
         this.movieObj=res.message
-        this.language=this.movieObj.language
+        /*this.language=this.movieObj.language
         this.moviename=this.movieObj.title
         this.yr=this.movieObj.year
         this.trailer=this.movieObj.trailer
-        this.runTym=this.movieObj.time
+        this.runTym=this.movieObj.time*/
         this.genres=this.movieObj.genres.join(" - ")
         this.directors=this.movieObj.directors.join(" - ")
         this.stars=this.movieObj.stars.join(" - ")
@@ -42,12 +42,11 @@ export class EditmovieComponent implements OnInit {
     this.file=event.target.files[0]
   }
 
-  editMovie(movieObj){
-    movieObj.language=this.language
+  editMovie(editedMovieObj){
     let formData=new FormData();
     formData.append('poster',this.file,this.file.name)
-    formData.append('movieObj',JSON.stringify(movieObj))
-    this.ms.updateMovie(formData,this.language,this.moviename).subscribe(
+    formData.append('movieObj',JSON.stringify(editedMovieObj))
+    this.ms.updateMovie(formData,this.movieObj.language,this.movieObj.moviename).subscribe(
       res=>{
         //if (res.message=='Movie added'){
           alert(res['message'])

@@ -9,7 +9,6 @@ import { MoviesComponent } from './movies/movies.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './register/register.component';
 import { TollywoodComponent } from './tollywood/tollywood.component';
-import { UserprofileComponent } from './userprofile/userprofile.component';
 import { WatchlaterComponent } from './watchlater/watchlater.component';
 
 const routes: Routes = [
@@ -20,10 +19,9 @@ const routes: Routes = [
     {path:'tollywood',component:TollywoodComponent},
     {path:'bollywood',component:BollywoodComponent},
     {path:'hollywood',component:HollywoodComponent},
-    {path:'watchlater',component:WatchlaterComponent},
     {path:'',redirectTo:'tollywood',pathMatch:'full'}
   ]},
-  {path:'userprofile',component:UserprofileComponent},
+  {path:'watchlater',component:WatchlaterComponent},
   {path:'movies/:language/moviedetails/:moviename',component:MoviedetailsComponent},
   {path:'',redirectTo:'/home',pathMatch:'full'},
   { path: 'admin/movies', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },

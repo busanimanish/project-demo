@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 import { MovieService } from '../movie.service';
 import { UserService } from '../user.service';
 
@@ -13,7 +14,7 @@ export class BollywoodComponent implements OnInit {
   bollywoodMovies=[]
   nomovies=false
   userType;
-  constructor(private ms:MovieService,private router:Router,private us:UserService) { }
+  constructor(private ms:MovieService,private router:Router,private us:UserService,private ls:LoginService) { }
 
   ngOnInit(): void {
     this.userType=this.us.userType
@@ -33,7 +34,13 @@ export class BollywoodComponent implements OnInit {
   }
 
   getMovieDetails(movie){
-    this.router.navigateByUrl(`movies/${movie.language}/moviedetails/${movie.title}`)
+    if (this.ls.userLoginStatus){
+      this.router.navigateByUrl(`movies/${movie.language}/moviedetails/${movie.title}`)
+    }
+    else{
+      alert("Please login to continue...")
+      this.router.navigateByUrl('login')
+    }
   }
 
   watchlater(movieObj){

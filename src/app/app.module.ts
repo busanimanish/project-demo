@@ -11,7 +11,6 @@ import { MoviesComponent } from './movies/movies.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SharedModule } from './shared/shared.module';
 import { WatchlaterComponent } from './watchlater/watchlater.component';
-import { UserprofileComponent } from './userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     LoginComponent,
     MoviesComponent,
     PagenotfoundComponent,
-    WatchlaterComponent,
-    UserprofileComponent,
+    WatchlaterComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@
           <a class="nav-link p-2 text-right" routerLink="movies" routerLinkActive="active" style="color: white;">Movies</a>
         </li>
         <li class="nav-item" *ngIf="ls.userLoginStatus() && us.userType=='user'">
-          <a class="nav-link p-2 text-right" routerLink="userprofile" routerLinkActive="active" style="color: white;">{{ls.username}}</a>
+          <a class="nav-link p-2 text-right" routerLink="watchlater" routerLinkActive="active" style="color: white;">{{ls.username}}</a>
         </li>
         <li *ngIf="!ls.userLoginStatus()" class="nav-item">
           <a class="nav-link p-2 text-right" routerLink="login" routerLinkActive="active" style="color: white;">Sign in</a>

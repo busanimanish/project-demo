@@ -5,11 +5,11 @@
         <form #ref="ngForm" (ngSubmit)="editMovie(ref.value)">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" id="title" name="title" class="form-control" [value]=moviename disabled ngModel>
+                <input type="text" id="title" name="title" class="form-control" [(ngModel)]="movieObj.title" disabled >
             </div>
             <div class="mb-3">
                 <label for="yr" class="form-label">Year</label>
-                <input type="text" id="yr" name="year" class="form-control" [value]=yr ngModel>
+                <input type="text" id="yr" name="year" class="form-control" [(ngModel)]="movieObj.year">
             </div>
             <div class="mb-3">
                 <label>Poster-1 (horizontal)</label>
@@ -21,27 +21,27 @@
             </div> -->
             <div class="mb-3">
                 <label for="trailer" class="form-label">Trailer URL</label>
-                <input type="text" id="trailer" name="trailer" class="form-control" [value]=trailer ngModel>
+                <input type="text" id="trailer" name="trailer" class="form-control" [(ngModel)]="movieObj.trailer">
             </div>
             <div class="mb-3">
                 <label for="time" class="form-label">Run time</label>
-                <input type="text" id="time" name="time" class="form-control" [value]=runTym ngModel>
+                <input type="text" id="time" name="time" class="form-control" [(ngModel)]="movieObj.time">
             </div>
             <div class="mb-3">
                 <label for="genres" class="form-label">Genres</label>
-                <input type="text" id="genres" name="genres" class="form-control" [value]=genres ngModel>
+                <input type="text" id="genres" name="genres" class="form-control" [(ngModel)]="genres">
             </div>
             <div class="mb-3">
                 <label for="directors" class="form-label">Directors</label>
-                <input type="text" id="directors" name="directors" class="form-control" [value]=directors ngModel>
+                <input type="text" id="directors" name="directors" class="form-control" [(ngModel)]="directors">
             </div>
             <div class="mb-3">
                 <label for="stars" class="form-label">Stars</label>
-                <input type="text" id="stars" name="stars" class="form-control" [value]=stars ngModel>
+                <input type="text" id="stars" name="stars" class="form-control" [(ngModel)]="stars">
             </div>
             <div class="mb-3">
                 <label for="available" class="form-label">Available in</label>
-                <input type="text" id="available" name="available" class="form-control" [value]=available ngModel>
+                <input type="text" id="available" name="available" class="form-control" [(ngModel)]="available">
             </div>
             <small>If there are multiple inputs (genres, directors, stars, available in), give the names seperated by hyphen(-)</small>
             <br>

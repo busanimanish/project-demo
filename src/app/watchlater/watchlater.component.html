@@ -1,4 +1,5 @@
-<table class="table mx-auto" *ngIf="watchlaterStatus">
+<div class="table-responsive">
+  <table class="table mx-auto mt-4" *ngIf="watchlaterStatus">
     <tbody>
       <tr *ngFor="let movie of watchlater;let i=index">
         <td><img src="{{movie.poster}}"></td>
@@ -8,7 +9,7 @@
         <td>
           <span class="dropdown">
             <button class="btn btn-sm" type="button" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            ...
+            <i class="fas fa-ellipsis-v"></i>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdown">
               <li><a class="dropdown-item" (click)="removeMovie(i)">Remove from watchlater</a></li>
@@ -19,6 +20,7 @@
       </tr>
     </tbody>
 </table>
+</div>
 <div *ngIf="!watchlaterStatus">
     No movies found
 </div>
